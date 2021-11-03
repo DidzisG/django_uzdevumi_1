@@ -122,12 +122,12 @@ def university(request):
         foreign = int(request.POST['foreign'])
 
         if maths > 40 and latvian > 40 and foreign > 40:
-            result = 'can not'
-
-        else:
             result = 'can'
 
-        return HttpResponse(f'{name} {result} apply yo university')
+        else:
+            result = 'can not'
+
+        return HttpResponse(f'{name} {result} apply to university')
 
     return render(
         request,
