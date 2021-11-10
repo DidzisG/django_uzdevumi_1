@@ -5,12 +5,6 @@ from django.forms import (
 )
 
 
-class NewPostForm(Form):
-
-    title = CharField()
-    content = CharField()
-
-
 class VisitForm(Form):
 
     visitor = CharField()

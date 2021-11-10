@@ -20,12 +20,5 @@ import uzdevumi.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('show-hello', uzdevumi.views.show_hello),
-    path('show-html', uzdevumi.views.show_html),
-    path('show-datetime', uzdevumi.views.show_datetime),
-    path('show-name', uzdevumi.views.show_name),
-    path('add-post', uzdevumi.views.add_post),
-    path('motivate', uzdevumi.views.motivate),
     path('add-visit', uzdevumi.views.add_visit),
-    path('university', uzdevumi.views.university),
 ]
