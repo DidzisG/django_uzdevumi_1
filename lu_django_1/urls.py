@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('add-user', uzdevumi.views.add_user),
     path('', uzdevumi.views.get_all_users),
+    path('user/<int:user_id>', uzdevumi.views.get_visit, name='get-user'),
 
 ]

@@ -7,10 +7,13 @@
 <h1>Full list of users</h1>
 <body>
     <ul>
-        {% for visit in visits %}
+        {% for user in visits %}
         <li>
-            <strong>{{ visit.user }}</strong> <br>
-            E-mail: {{ visit.email }} <br>
+            <a href="{% url 'get-user' user_id=user.id %}">
+            <strong>{{ user.user }}</strong> <br>
+            E-mail: {{ user.email }} <br
+                <p></p>
+            </a>
         </li>
         {% endfor %}
     </ul>

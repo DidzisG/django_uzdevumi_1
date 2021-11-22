@@ -3,6 +3,22 @@ from django.shortcuts import render
 from .forms import VisitForm
 from .models import Visit
 
+def get_visit(request, user_id):
+
+    visit = Visit.objects.get(id=user_id)
+
+    context = {
+        'visit': visit,
+
+    }
+
+    return render(
+        request,
+        template_name='user.html',
+        context=context,
+
+    )
+
 def get_all_users(request):
     visits = Visit.objects.all()
 
