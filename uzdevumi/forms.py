@@ -8,5 +8,4 @@ from django.forms import (
 class VisitForm(Form):
 
     visitor = CharField()
-    date_time = DateTimeField()
-    reason = CharField()
+    email = CharField()

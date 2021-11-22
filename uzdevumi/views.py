@@ -22,8 +22,7 @@ def add_visit(request):
 
             visit = Visit(
                 visitor=form.cleaned_data['visitor'],
-                reason=form.cleaned_data['reason'],
-                date_time=form.cleaned_data['date_time'],
+                email=form.cleaned_data['email'],
             )
 
             visit.save()

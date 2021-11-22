@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Lietotāji</title>
 </head>
-<h1>Full list of users</h1>
+<h1>Users and emails</h1>
 <body>
     <ul>
         {% for visit in visits %}
         <li>
             <strong>{{ visit.visitor }}</strong> <br>
-            Laiks: {{ visit.date_time }} <br>
-            Iemesls: {{ visit.reason }} <br>
+            E-mail: {{ visit.email }} <br>
         </li>
         {% endfor %}
     </ul>
