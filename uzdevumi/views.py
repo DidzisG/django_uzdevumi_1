@@ -3,6 +3,15 @@ from django.shortcuts import render
 from .forms import VisitForm
 from .models import Visit
 
+def get_all_visits(request):
+    visits = Visit.objects.all()
+
+    return render(
+        request,
+        template_name= 'vizite.html',
+        context={'visits': visits},
+    )
+
 def add_visit(request):
 
     form = VisitForm(request.POST or None)
