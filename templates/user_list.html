@@ -7,7 +7,7 @@
 <h1>Full list of users</h1>
 <body>
     <ul>
-        {% for user in visits %}
+        {% for user in users %}
         <li>
             <a href="{% url 'get-user' user_id=user.id %}">
             <strong>{{ user.user }}</strong> <br>

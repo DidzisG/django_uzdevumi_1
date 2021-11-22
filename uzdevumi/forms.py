@@ -4,7 +4,7 @@ from django.forms import (
 )
 
 
-class VisitForm(Form):
+class UserForm(Form):
 
     user = CharField()
     email = CharField()

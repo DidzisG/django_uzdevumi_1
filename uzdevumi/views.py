@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
-from .forms import VisitForm
-from .models import Visit
+from .forms import UserForm
+from .models import User
 
-def get_visit(request, user_id):
+def get_user(request, user_id):
 
-    visit = Visit.objects.get(id=user_id)
+    user = User.objects.get(id=user_id)
 
     context = {
-        'visit': visit,
+        'user': user,
 
     }
 
@@ -20,31 +20,31 @@ def get_visit(request, user_id):
     )
 
 def get_all_users(request):
-    visits = Visit.objects.all()
+    users = User.objects.all()
 
     return render(
         request,
         template_name= 'user_list.html',
-        context={'visits': visits},
+        context={'users': users},
     )
 
 def add_user(request):
 
-    form = VisitForm(request.POST or None)
+    form = UserForm(request.POST or None)
 
     if request.method == 'POST':
 
         if form.is_valid():
 
-            visit = Visit(
+            user = User(
                 user=form.cleaned_data['user'],
                 email=form.cleaned_data['email'],
             )
 
-            visit.save()
+            user.save()
 
             context = {
-                'visit': visit,
+                'user': user,
             }
 
             return render(
