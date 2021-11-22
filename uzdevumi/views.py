@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .forms import VisitForm
-
+from .models import Visit
 
 def add_visit(request):
 
@@ -11,10 +11,16 @@ def add_visit(request):
 
         if form.is_valid():
 
+            visit = Visit(
+                visitor=form.cleaned_data['visitor'],
+                reason=form.cleaned_data['reason'],
+                date_time=form.cleaned_data['date_time'],
+            )
+
+            visit.save()
+
             context = {
-                'visitor': form.cleaned_data['visitor'],
-                'reason': form.cleaned_data['reason'],
-                'date_time': form.cleaned_data['date_time'],
+                'visit': visit,
             }
 
             return render(
