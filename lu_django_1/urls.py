@@ -20,7 +20,7 @@ import uzdevumi.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('add-visit', uzdevumi.views.add_visit),
-    path('', uzdevumi.views.get_all_visits),
+    path('add-user', uzdevumi.views.add_user),
+    path('', uzdevumi.views.get_all_users),
 
 ]
