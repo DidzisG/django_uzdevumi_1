@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User added</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% block content %}
     <p>
         <strong>Username: {{ user.user }} </strong><br>
         Email: {{ user.email }}<br>
     </p>
-
-</body>
-</html>
+{% endblock %}

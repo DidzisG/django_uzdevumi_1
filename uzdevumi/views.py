@@ -19,6 +19,7 @@ def get_user(request, user_id):
 
     )
 
+
 def get_all_users(request):
     users = User.objects.all()
 
@@ -28,14 +29,43 @@ def get_all_users(request):
         context={'users': users},
     )
 
+
 def add_user(request):
 
     form = UserForm(request.POST or None)
-
     if request.method == 'POST':
 
         if form.is_valid():
 
+            user = User(
+                user=form.cleaned_data['user'],
+                email=form.cleaned_data['email'],
+            )
+
+            user.save()
+
+            context = {
+                'user': user,
+            }
+
+            return render(
+                request,
+                template_name='user.html',
+                context=context,
+            )
+
+    return render(
+        request,
+        template_name='form.html',
+        context={'form': form}
+    )
+
+
+def add_user(request):
+    form = UserForm(request.POST or None)
+    if request.method == 'POST':
+
+        if form.is_valid():
             user = User(
                 user=form.cleaned_data['user'],
                 email=form.cleaned_data['email'],
